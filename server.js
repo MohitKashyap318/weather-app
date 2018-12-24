@@ -4,6 +4,7 @@ const request = require('request');
 const app = express()
 
 const apiKey = '61bccb1c3e7703d0b980165aa96fe05b';
+const server_PORT=process.env.PORT||3333;
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -35,6 +36,6 @@ app.post('/', function (req, res) {
   });
 })
 
-app.listen(3001, function () {
+app.listen(server_PORT, function () {
   console.log('server started!')
 })
